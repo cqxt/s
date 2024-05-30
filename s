@@ -4816,12 +4816,12 @@ do
 						"YoUr A BoOt",
 						"keep Trying You Jobby",
 					},
-					["KayFlock"] = {
-						"Owned By KayFlock",
-						"KayFlock KayFlock Kayflock RAHHHHH",
-						"Slammed by KayFlock",
-						"YOU GOT SLAMMED BY KayFlock",
-						"SEEMS LIKE YOU NEED KayFlock GG/3BgXQbfbYj",
+					["DD Osama"] = {
+						"Owned By DD Osama",
+						"DD Osama DD Osama Kayflock RAHHHHH",
+						"Slammed by DD Osama",
+						"YOU GOT SLAMMED BY DD Osama",
+						"SEEMS LIKE YOU NEED DD Osama GG/3BgXQbfbYj",
 						"GG/3BgXQbfbYj",
 						"GG/3BgXQbfbYj <-- THIS WILL LET YOU COPE WITH YOUR ISSUES",
 						"WHAT YOU CANT BEAT KAYFLOCK?",
@@ -5534,7 +5534,7 @@ local Window = Library:Window({Size = UDim2.new(0,580,0,600)}) do
 			end})
 			crosshairSection:Dropdown({Name = "Sizing Easing Style", Flag = "Crosshair Sizing Easing Style", Options = {"Off", "Linear", "Cubic", "Quad", "Quart", "Quint", "Sine", "Exponential", "Back", "Bounce", "Elastic", "Circular"}, Default = "Off"})
 			crosshairSection:Dropdown({Name = "Speed Easing Style", Flag = "Crosshair Speed Easing Style", Options = {"Off", "Linear", "Cubic", "Quad", "Quart", "Quint", "Sine", "Exponential", "Back", "Bounce", "Elastic", "Circular"}, Default = "Off"})
-			crosshairSection:Toggle({Name = "Show Text", Flag = "KayFlock", Callback = function(Bool)
+			crosshairSection:Toggle({Name = "Show Text", Flag = "DD Osama", Callback = function(Bool)
 				local sub = utility.drawings["Sub"]
 				local domain = utility.drawings["Domain"]
 				-- 
@@ -5585,7 +5585,7 @@ local Window = Library:Window({Size = UDim2.new(0,580,0,600)}) do
 		-- 
 		local chatSpam = misc:Section({Name = "Chat Spam", Size = 330, Side = "Right"}) do
 			chatSpam:Toggle({Name = "Enabled", Flag = "Chat Spam"})
-			chatSpam:Dropdown({Name = "Type", Flag = "Chat Spam Type", Options = {"KayFlock", "Scottish"}, Default = "KayFlock"})
+			chatSpam:Dropdown({Name = "Type", Flag = "Chat Spam Type", Options = {"DD Osama", "Scottish"}, Default = "DD Osama"})
 			chatSpam:Slider({Name = "Delay", Flag = 'Chat Spam Delay', Suffix = "s", Min = 0.1, Max = 10.0, Default = 5.0, Decimals = 0.1})
 			chatSpam:Toggle({Name = "Emojis", Flag = "Emojis"})
 			chatSpam:Toggle({Name = "Symbols", Flag = "Symbol"})
@@ -5705,16 +5705,16 @@ local Window = Library:Window({Size = UDim2.new(0,580,0,600)}) do
 		Cfgs:Textbox({Flag = "SettingsConfigurationName", Placeholder = "Config name"})
 		--
 		local CurrentList = {};
-		if not isfolder("KayFlock") then 
-			makefolder("KayFlock")
+		if not isfolder("DD Osama") then 
+			makefolder("DD Osama")
 		end 
-		if not isfolder("KayFlock/Configs") then 
-			makefolder("KayFlock/Configs")
+		if not isfolder("DD Osama/Configs") then 
+			makefolder("DD Osama/Configs")
 		end 
 		local function UpdateConfigList()
 			local List = {};
-			for idx, file in ipairs(listfiles("KayFlock/Configs")) do
-				local FileName = file:gsub("KayFlock/Configs\\", ""):gsub(".cfg", "")
+			for idx, file in ipairs(listfiles("DD Osama/Configs")) do
+				local FileName = file:gsub("DD Osama/Configs\\", ""):gsub(".cfg", "")
 				List[#List + 1] = FileName;
 			end;
 
@@ -5736,28 +5736,28 @@ local Window = Library:Window({Size = UDim2.new(0,580,0,600)}) do
 		--
 		Cfgs:Button({Name = "Create", Callback = function()
 			local ConfigName = flags.SettingsConfigurationName;
-			if ConfigName == "" or isfile("KayFlock/Configs/" .. ConfigName .. ".cfg") then
+			if ConfigName == "" or isfile("DD Osama/Configs/" .. ConfigName .. ".cfg") then
 				return;
 			end;
-			writefile("KayFlock/Configs/" .. ConfigName .. ".cfg", Library:GetConfig());
+			writefile("DD Osama/Configs/" .. ConfigName .. ".cfg", Library:GetConfig());
 			UpdateConfigList();
 		end})
 		Cfgs:Button({Name = "Save", Callback = function()
 			local SelectedConfig = flags.SettingConfigurationList;
 			if SelectedConfig then
-				writefile("KayFlock/Configs/" .. SelectedConfig .. ".cfg", Library:GetConfig())
+				writefile("DD Osama/Configs/" .. SelectedConfig .. ".cfg", Library:GetConfig())
 			end;
 		end})
 		Cfgs:Button({Name = "Load", Callback = function()
 			local SelectedConfig = flags.SettingConfigurationList;
 			if SelectedConfig then
-				Library:LoadConfig(readfile("KayFlock/Configs/" .. SelectedConfig .. ".cfg"))
+				Library:LoadConfig(readfile("DD Osama/Configs/" .. SelectedConfig .. ".cfg"))
 			end
 		end})
 		Cfgs:Button({Name = "Delete", Callback = function()
 			local SelectedConfig = flags.SettingConfigurationList;
 			if SelectedConfig then
-				delfile("KayFlock/Configs/" .. SelectedConfig .. ".cfg")
+				delfile("DD Osama/Configs/" .. SelectedConfig .. ".cfg")
 			end
 			UpdateConfigList();
 		end})
@@ -6298,7 +6298,7 @@ do
 	end 
 end 
 
-Library:Notification("Loaded KayFlock in " .. Floor((tick() - loadingTime) * 1000)  .."ms", 3, Library.Accent, flags["Notification Position"])
+Library:Notification("Loaded DD Osama in " .. Floor((tick() - loadingTime) * 1000)  .."ms", 3, Library.Accent, flags["Notification Position"])
 
 
 
